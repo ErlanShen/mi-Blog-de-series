@@ -1,0 +1,122 @@
+.container{
+    background-image: url('../../assets/27402.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+    height: 100vh;
+  }
+  .amarillo{
+   margin: 10px;
+  }
+  .azul{
+    margin: 10px;
+  }
+  .img_fondo{
+    height: 100%;
+    width: 100%;
+  }
+  .logo{
+    margin: 10px;
+  }
+  .mensajes{
+  
+    margin: 1px;
+  }
+  
+  .texto_redesSociales{
+    margin: 10px;
+  }
+  .texto_redesSociales>h3{
+    text-orientation: upright;
+    writing-mode: sideways-rl;
+    text-align: center;
+  }
+  .botonMenu{
+    margin: 10px;
+  }
+  mat-icon{
+    color:rgb(255, 255, 255);
+    font-size: 2rem;
+  }
+  .textoMenu{
+    margin: 10px;
+    
+  }
+  .textoMenu>h5{
+    text-orientation: upright;
+    writing-mode: sideways-rl;
+  }
+  .purpura{
+    margin: 10px;
+    background-image: url("../../assets/831757.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+  }
+  .imagenNumero{
+    margin: 10px;
+    background-image: url("../../assets/01.png");
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .footer{
+    margin: 10px;
+  }
+  .celeste{
+    margin: 5px;
+    background-color: aqua;
+  }
+  .categoria{
+    margin: 5px;
+  }
+  .gris{
+    margin: 10px;
+    background-color: rgb(131, 131, 131);
+  }
+  .rosado{
+    background-color: rgba(255, 0, 242, 0.288);
+  }
+  .Numero>p{
+    text-align: center;
+    color: rgb(255, 0, 242);
+    font-size: 2rem;
+  }
+  .TextoBoton>h3{
+    text-align: left;
+    color: rgb(212, 0, 202);
+  }
+  .texto2{
+    text-align: left;
+    color: rgb(255, 0, 242); 
+  }
+  .boton2{
+    background-color: rgb(255, 0, 242);
+  }
+  
+  .verde{
+    margin: 5px;
+    background-color: green;
+  }
+  .foto{
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    border-radius: 1rem;
+    margin-right: 10px;
+  }
+  .botonVerMas>a{
+    color: chocolate;
+    font-size: 1rem;
+  }
+
+  .example-card{
+  width: auto;
+}
+
+.example-header-image {
+  size: 0.6rem;
+}

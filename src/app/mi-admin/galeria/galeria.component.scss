@@ -1,0 +1,36 @@
+.agregar{
+    font-size: 1.2rem;
+    width:400px;
+    padding:16px;
+    border-radius:10px;
+    margin:auto;
+    background-color:rgb(255, 255, 255);
+  }
+  .agregar>h1{
+    text-align: center;
+    color: black;
+  }
+  .bSubir{
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    background-color: rgb(151, 248, 72);
+  }
+
+  mat-card{
+    margin: 20px;
+  }
+  .card{
+    margin-bottom: 1rem;
+    object-position: center;
+  }
+  img{
+    background-size: cover;
+    object-fit: contain;
+    max-width: 350px;
+    min-width: 300px;
+    width: 90%;
+    max-height: 300px;
+    min-height: 350px;
+    height: 90%;
+
+  }

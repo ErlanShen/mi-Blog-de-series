@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "miblog-3ac15": {
+      "hosting": {
+        "miBlog": [
+          "miblog-3ac15"
+        ]
+      }
+    }
+  }
+}

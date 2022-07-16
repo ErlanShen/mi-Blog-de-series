@@ -1,0 +1,40 @@
+<div class="container" fxLayout="column">
+    <div class="tituloBlogs" fxFlex>
+        <h1>Mira Series,Peliculas y Cartoons</h1>
+    </div>
+    <div class="categoriasBlogs" fxFlex="8">
+        <div class="botonCategorias" fxLayout="row" fxLayoutAlign="space-around center">
+            <button mat-raised-button (click)="todos()">Todos</button>
+            <button mat-raised-button (click)="verClick(categoria.id)" 
+            *ngFor="let categoria of misCats"
+            [ngStyle]="{'background-color':categoria.color}">
+                {{categoria.nombre}}
+            </button>
+        </div>
+    </div>
+    <div class="cardBlogs" fxFlex="70" fxLayout="row wrap" fxLayoutAlign="space-around center">
+        <mat-card fxFlex="25%" class="card" *ngFor="let item of misBlogs">
+            <mat-card-header>
+                <div mat-card-avatar >
+                    <img class="headerImage" src="{{item.fotoautor}}">
+                </div>
+                <mat-card-title>{{item.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{item.subtitulo}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image routerLink="/singular/{{item.id}}"
+            src="{{item.foto}}">
+            <mat-card-content class="cardBody">
+                <p>
+                    {{item.descripcion}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" routerLink="/singular/{{item.id}}">Ver mas</button>
+                <button mat-raised-button color="accent">SHARE</button>
+            </mat-card-actions>
+            <app-vista-categorias [datos]="item.categoria"></app-vista-categorias>
+        </mat-card>
+        
+    </div>
+    <span fxFlex></span>
+</div>

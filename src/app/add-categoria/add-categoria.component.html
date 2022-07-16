@@ -1,0 +1,25 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" *ngIf="VerCategoria">
+    <h1>Agregar Nueva Categoria</h1>
+        <form fxLayout="column" fxFlex fxLayoutAlign="center center">
+            <mat-form-field apperance="outline">
+                <mat-label>
+                    Nombre
+                </mat-label>
+                <input type="text" matInput name="nombre" #nombre="ngModel" [(ngModel)]="VerCategoria.nombre">
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>
+                    Color
+                </mat-label>
+                <input type="color" matInput name="color" #color="ngModel" [(ngModel)]="VerCategoria.color">
+            </mat-form-field>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+                <button mat-raised-button color="primary" (click)="nuevo(VerCategoria)"> <mat-icon>save</mat-icon> Guardar</button>
+                <button mat-raised-button color="warn" routerLink="/admin/adminCategoria"> <mat-icon>close</mat-icon> Cancelar</button>
+            </div>
+            
+        </form>
+
+</div>

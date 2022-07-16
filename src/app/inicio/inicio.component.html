@@ -1,0 +1,131 @@
+<div class="container" fxLayout="row" *ngIf="blogUltimo">
+  <div class="amarillo" fxFlex="10" fxLayout="column">
+    <div class="logo" fxFlex="20" fxLayout="column">
+      <img class="img_logo" src="../assets/164-1643129_chain-reaction-logo-logo-de-jimmy-neutron.png" alt="" fxFlex>
+    </div>
+    <div class="mensajes" fxFlex fxLayout="row">
+      <div class="redesSociales" fxFlex fxLayout="column" fxLayoutAlign="space-between center">
+        <h3 fxFlex>Facebook</h3>
+        <h3 fxFlex>email</h3>
+        <h3 fxFlex>Telegram</h3>
+      </div>
+      <div class="mensajes" fxFlex fxLayout="column" fxLayoutAlign="space-between center">
+        <div fxFlex class="button-container">
+          <button mat-icon-button>
+            <mat-icon>facebook</mat-icon>
+          </button>
+        </div>
+        <div fxFlex class="button-container">
+          <button mat-icon-button>
+            <mat-icon>email</mat-icon>
+          </button>
+        </div>
+        <div fxFlex class="button-container">
+          <button mat-icon-button>
+            <mat-icon>home</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="azul" fxFlex fxLayout="column">
+    <div fxFlex fxLayout="row">
+      <div class="purpura" fxFlex fxLayout="row">
+        <div fxFlex fxLayout="column">
+          <div fxFlex class="gris" fxLayout="row">
+            <div class="imagenNumero" fxFlex fxLayout="row">
+              <div fxFlex fxLayout="column">
+                <div fxFlex="8" fxLayout="row">
+                  <div class="verde" fxFlex="55" fxLayoutGap="10px">
+                    <h4>{{blogUltimo.subtitulo}}</h4>
+                  </div>
+                </div>
+                <div fxFlex="20" fxLayout="row">
+                  <div fxFlex="20">
+                    <img class="foto" src="{{blogUltimo.fotoautor}}">
+                  </div>
+                </div>
+                <div fxFlex="8" fxLayout="row">
+                  <div class="verde" fxFlex="20">
+                    <h5>{{blogUltimo.fecha}}</h5>
+                  </div>
+                </div>
+                <div class="verde">
+                  <h1>{{blogUltimo.titulo}}</h1>
+                </div>
+                <div class="verde">
+                  <p>{{blogUltimo.descripcion}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- blogs destacados -->
+            <div class="celeste" fxFlex="60" fxLayout="column">
+              <div class="gris" fxLayout="row" fxLayoutGap="20px">
+                <mat-card class="example-card" *ngFor="let item of blogDestacados">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{item.titulo}}</mat-card-title>
+                  </mat-card-header>
+                  <img class="imagenDestacados" routerLink="/singular/{{item.id}}" mat-card-image src="{{item.foto}}" />
+                  <mat-card-content>
+                    <p>
+                      {{item.descripcion}}
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button routerLink="/singular/{{item.id}}">Leer mas</button>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <span class="gris" fxFlex="10"></span>
+            </div>
+          </div>
+          <div fxFlex="25" fxLayout="row">
+            <div class="botonVerMas" fxFlex="20">
+              <a mat-button routerLink="/singular/{{blogUltimo.id}}">READ MORE</a>
+            </div>
+            <span fxFlex></span>
+            <div fxFlex="50" fxLayout="row">
+              <div class="rosado" fxLayout="row" fxFlex="60" fxLayoutAlign="center center">
+                <div class="Numero" fxFlex>
+                  <p>02</p>
+                </div>
+                <div class="TextoBoton" fxFlex>
+                  <h3>Mountain photo collection</h3>
+                </div>
+              </div>
+              <div class="boton2" fxFlex="20" fxLayout="column">
+                <a mat-button fxFlex fxLayout="row" fxLayoutAlign="center center">
+                  <mat-icon>arrow_forward_ios</mat-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="botonMenu" fxFlex="5" fxLayout="column">
+        <div fxFlex="10">
+          <a mat-icon-button>
+            <mat-icon>menu</mat-icon>
+          </a>
+        </div>
+        <span fxFlex></span>
+        <div fxFlex fxLayout="column">
+          <div class="textoMenu" fxFlex>
+            <h5 fxFlex>SCROLL DOWN</h5>
+          </div>
+        </div>
+        <span fxFlex></span>
+      </div>
+    </div>
+    <div class="footer" fxFlex="12" fxLayout="row">
+      <div class="categoria" fxFlex="20">
+        <h3>Categoria</h3>
+      </div>
+      <span fxFlex></span>
+      <div class="celeste" fxFlex="40">
+        <h3>Sent your inquiry</h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container" *ngIf="registro" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Formulario de Registro</h1>
+    <form fxLayout="column" fxLayoutAlign="center center" #formularioRegistro="ngForm">
+        <mat-form-field>
+            <mat-label>Correo</mat-label> 
+            <input type="text" matInput name="email" #email="ngModel" [(ngModel)]="registro.email"
+            required pattern="[a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"> 
+            <mat-error *ngIf="formularioRegistro.controls['email']?.errors?.required">Este campo no puede estar vacio</mat-error>
+            <mat-error *ngIf="formularioRegistro.controls['email']?.errors?.pattern">El correo parece estar incompleto</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Contrasenia</mat-label> 
+            <input type="password" matInput name="contrasenia" #contrasenia="ngModel" [(ngModel)]="registro.contrasenia" 
+            required pattern="^(?=.*\d)(?=.*[\.\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{6,30}$">
+            <mat-error *ngIf="formularioRegistro.controls['contrasenia']?.errors?.required">Este campo no puede estar vacio</mat-error>
+            <mat-error *ngIf="formularioRegistro.controls['contrasenia']?.errors?.pattern">El Campo requiere de 6 a 30 caracteres.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Verificar Contrasenia</mat-label> 
+            <input type="password" matInput name="verificar" #verificar ngModel required confirmador="contrasenia" >
+            <mat-error *ngIf="formularioRegistro.controls['verificar']?.errors?.required">Este campo no puede estar vacio</mat-error>
+            <mat-error *ngIf="formularioRegistro.controls['verificar']?.errors?.confirmador">Las contrasenias deben coincidir</mat-error>
+        </mat-form-field>
+
+    </form>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-raised-button [disabled]="formularioRegistro.invalid" 
+        (click)="nuevoUser(registro)"> Registrarse</button>
+        <button mat-raised-button color="warn" routerLink="/login">login</button>
+        
+    </div>
+</div>

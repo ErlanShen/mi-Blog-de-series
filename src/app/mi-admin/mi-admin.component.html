@@ -1,0 +1,17 @@
+<div class="container" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+
+    <button mat-raised-button routerLink="/admin/inicio">
+        <mat-icon>pan_tool</mat-icon> Blogs
+    </button>
+    <button mat-raised-button routerLink="/admin/adminCategoria">
+        <mat-icon>pan_tool</mat-icon> Categorais
+    </button>
+    <button mat-raised-button color="primary" routerLink="/admin/galeria">
+        <mat-icon>photo</mat-icon> Galeria
+    </button>
+    <button mat-raised-button color="warn" (click)="logout()">
+        <mat-icon>pan_tool</mat-icon> Cerrar Sesion
+    </button>
+
+</div>
+<router-outlet></router-outlet>

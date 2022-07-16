@@ -1,0 +1,97 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+
+    <h1>Editar Datos Blog</h1>
+    <form fxLayout="column" fxLayoutAlign="center center" #formularioBlog="ngForm">
+        <mat-form-field apperance="outline">
+            <mat-label>
+                titulo
+            </mat-label>
+            <input type="text" matInput name="titulo" #titulo="ngModel" [(ngModel)]="verBlog.titulo">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                subtitulo
+            </mat-label>
+            <input type="text" matInput name="subtitulo" #subtitulo="ngModel" [(ngModel)]="verBlog.subtitulo">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                foto
+            </mat-label>
+            <input type="text" matInput name="foto" #foto="ngModel" [(ngModel)]="verBlog.foto">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                descripcion
+            </mat-label>
+            <input type="text" matInput name="descripcion" #descripcion="ngModel" [(ngModel)]="verBlog.descripcion">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Activo</mat-label>
+            <mat-select name="activo" #activo="ngModel" [(ngModel)]="verBlog.activo">
+                <mat-option [value]="true">Si</mat-option>
+                <mat-option [value]="false">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                autor
+            </mat-label>
+            <input type="text" matInput name="autor" #autor="ngModel" [(ngModel)]="verBlog.autor">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                foto autor
+            </mat-label>
+            <input type="text" matInput name="fotoautor" #fotoautor="ngModel" [(ngModel)]="verBlog.fotoautor">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Categoria</mat-label>
+            <mat-select multiple name="categorias" #categorias="ngModel" [(ngModel)]="verBlog.categoria" [compareWith]="comparador">
+                <mat-option *ngFor="let topping of verCategorias" [value]="topping">{{topping.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                subtitulo 2
+            </mat-label>
+            <input type="text" matInput name="subtitulo2" #subtitulo2="ngModel" [(ngModel)]="verBlog.subtitulo2">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                foto 2
+            </mat-label>
+            <input type="text" matInput name="foto2" #foto2="ngModel" [(ngModel)]="verBlog.foto2">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                descripcion 2
+            </mat-label>
+            <input type="text" matInput name="descripcion2" #descripcion2="ngModel" [(ngModel)]="verBlog.descripcion2">
+        </mat-form-field>
+
+        <mat-form-field apperance="outline">
+            <mat-label>
+                Fecha
+            </mat-label>
+            <input type="date" matInput name="fecha" #fecha="ngModel" [(ngModel)]="verBlog.fecha">
+        </mat-form-field>
+
+    </form>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <button mat-raised-button color="primary" (click)="guardar(verBlog)"> <mat-icon>save</mat-icon> Guardar</button>
+        <button mat-raised-button color="warn" routerLink="/admin/inicio"> <mat-icon>close</mat-icon> Cancelar</button>
+    </div>
+
+</div>

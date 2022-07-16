@@ -1,0 +1,7 @@
+<mat-chip-list>
+    <mat-chip *ngFor="let chiplist of enviado">
+        <div class="circulo" [ngStyle]="{'background-color':chiplist.color}">
+        </div>
+        {{chiplist.nombre}}
+    </mat-chip>
+</mat-chip-list>

@@ -1,0 +1,44 @@
+.container{
+    background-image: url('https://i.pinimg.com/originals/38/d0/67/38d0673f7056c1c38398c1bf7bf565a5.jpg');
+}
+.tituloBlogs{
+    margin: 10px;
+}
+.tituloBlogs>h1{
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 10px 4px 8px rgba(255, 0, 0, 0.815);
+}
+.categoriasBlogs{
+    margin: 10px;
+}
+.botonCategorias{
+    border-color: darkgray;
+}
+button{
+    margin: 7px;
+    color: darkblue;
+    font-size: 1rem;
+}
+.cardBlogs{
+    margin: 10px;
+    border-radius: 5rem;
+}
+.blockCards{
+    background-color: darkslategrey;
+    margin: 10px;
+}
+.card{
+   margin: 20px;
+}
+.cardBody>p{
+    color: black;
+}
+.headerImage {
+    background-size: cover;
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    border-radius: 1rem;
+    margin-right: 10px;
+  }

@@ -1,0 +1,38 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+
+    <div fxFlex fxLayout="column">
+        <div class="agregar" fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+            <button mat-raised-button class="bSubir" (click)="invisible= !invisible">Subir</button>
+            <div *ngIf="invisible">
+                <mat-form-field appearance="outline">
+                    <mat-icon matSuffix>cloud</mat-icon>
+                    <mat-label>Seleccione sus imagenes</mat-label>
+                    <ngx-mat-file-input multiple (change)="ver($event)" [accept]="'.jpg,.png,.jpeg,.webp,.svg'">
+                    </ngx-mat-file-input>
+                </mat-form-field>
+                <button mat-icon-button color="primary" (click)="subir(misFotos)" (click)="mensajeSave(message,action)" matPrefix>
+                    <mat-icon>save</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="secundari" fxFlex fxLayout="column">
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+            <mat-card class="fotos" *ngFor="let item of allPhotos">
+
+                <img mat-card-image src="{{item.archivo}}">
+
+                <mat-card-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                    <button class="bCopy" (click)="copiar(item.archivo)" (click)="mensajeCopy(message,action)" mat-fab>
+                        <mat-icon>content_copy</mat-icon>
+                    </button>
+                    <button color="warn"  (click)="eliminar(item,message)" mat-fab>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,24 @@
+<div class="container" fxLayout="column">
+    <div class="header" fxFlex="20" fxLayoutAlign="row">
+        <div class="logo" fxFlex fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
+            <button mat-raised-button routerLink="/inicio"> 
+                <mat-icon>theaters</mat-icon> My Blog FireBase
+            </button>
+            <button mat-raised-button routerLink="/admin/inicio" > 
+                <mat-label mat>Admin </mat-label>
+                <mat-icon matSuffix>pan_tool</mat-icon>
+            </button>
+        </div>
+
+        <span fxFlex></span>
+        
+        <div class="logo" fxFlex="30" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-stroked-button color="warn" routerLink="/inicio" routerLinkActive="activo">Inicio</button>
+            <button mat-stroked-button color="warn" routerLink="/blogs" routerLinkActive="activo">Blogs</button>
+            <button mat-stroked-button color="warn" routerLink="/login" routerLinkActive="activo">Login</button>
+            <button mat-fab color="primary">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

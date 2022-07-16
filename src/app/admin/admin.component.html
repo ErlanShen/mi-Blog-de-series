@@ -1,0 +1,60 @@
+<div class="container" fxLayout="column">
+  <span fxFlex></span>
+  <div fxFlex="80">
+    <button mat-raised-button routerLink="/admin/addBlog">
+      <mat-icon>note_add</mat-icon> Crear Nuevo Blog
+    </button>
+
+    <mat-table [dataSource]="pelota" class="mat-elevation">
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef fxFlex="5" fxLayoutAlign="center center"> Activo {{nActivos}} </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="5" fxLayoutAlign="center center">
+          <mat-slide-toggle 
+          [checked]="element.activo" 
+          (change)="cambiar($event,element)"
+          [disabled]="nActivos>2&&element.activo===false">{{element.activo}}</mat-slide-toggle>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="titulo">
+        <mat-header-cell *matHeaderCellDef fxFlex="10" fxLayoutAlign="center center"> Titulo </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="10" fxLayoutAlign="center center"> {{element.titulo}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="foto">
+        <mat-header-cell *matHeaderCellDef fxFlex="10" fxLayoutAlign="center center"> Imagen </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="10" fxLayoutAlign="center center"> <img src="{{element.foto}}">
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef fxFlex fxLayoutAlign="center center"> Descripcion </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex fxLayoutAlign="center center"> {{element.descripcion}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="categorias">
+        <mat-header-cell *matHeaderCellDef fxFlex="20" fxLayoutAlign="center center"> Categorias </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="20" fxLayoutAlign="center center">
+          <app-vista-categorias [datos]="element.categoria"></app-vista-categorias>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef fxFlex="15" fxLayoutAlign="center center"> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="15" fxLayoutAlign="center center">
+          <button routerLink="/admin/formulario/{{element.id}}" mat-fab>
+            <mat-icon>attach_file</mat-icon>
+          </button>
+          <button (click)="borrar(element)" mat-fab color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <span fxFlex></span>
+</div>

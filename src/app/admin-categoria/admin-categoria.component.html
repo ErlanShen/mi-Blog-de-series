@@ -1,0 +1,41 @@
+<div class="container" fxLayout="columns"  fxLayoutAlign="center center" *ngIf="tablaCat">
+<button mat-raised-button routerLink="/admin/addCategoria">
+      <mat-icon>note_add</mat-icon> Crear Nueva Categoria
+    </button>
+    
+    <mat-table [dataSource]="tablaCat" class="mat-elevation" fxFlex
+    fxLayout="column" fxLayoutAlign="center center">
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef fxFlex="5" > id. </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="5"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef fxFlex> Nombre Categoria </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex> {{element.nombre}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef fxFlex="20"> Color </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex="20" class="circulo"
+          [ngStyle]="{'background-color':(element).color}"></mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef fxFlex> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element" fxFlex>
+          <button routerLink="/admin/formularioCategoria/{{element.id}}" mat-fab>
+            <mat-icon>attach_file</mat-icon>
+          </button>
+          <button (click)="borrar(element)" mat-fab color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+</div>

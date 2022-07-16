@@ -1,0 +1,25 @@
+.container{
+    background-image: url('https://i.pinimg.com/originals/38/d0/67/38d0673f7056c1c38398c1bf7bf565a5.jpg');
+}
+.division{
+    background-color: rgba(41, 41, 41, 0.582);
+}
+.texto{
+    margin: 20px;
+}
+.imagenBlog{
+    width: 20rem;
+    margin: 10px;
+    image-resolution: unset;
+    object-fit: contain;
+    object-position: center;
+}
+.texto>h1,h3,p{
+    margin: 0.6rem;
+}
+.titulo{
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    text-align: left;
+    text-shadow: 10px 4px 8px rgba(255, 0, 0, 0.815);
+}

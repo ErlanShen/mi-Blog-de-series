@@ -1,0 +1,29 @@
+<div class="container"  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" *ngIf="Datos" >
+    <h1>Iniciar Sesion</h1>
+<form fxLayout="column" fxFlex fxLayoutAlign="center center" #formularioLogin="ngForm">
+    <mat-form-field>
+        <mat-label>
+            Correo
+        </mat-label>
+        <input type="text" matInput name="email" #email="ngModel" [(ngModel)]="Datos.email" 
+        required pattern="[a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"> 
+        <mat-error *ngIf="formularioLogin.controls['email']?.errors?.required">Este campo no puede estar vacio</mat-error>
+        <mat-error *ngIf="formularioLogin.controls['email']?.errors?.pattern">El correo parece estar incompleto</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Contrasenia
+        </mat-label>
+        <input type="password" matInput name="contrasenia" #contrasenia="ngModel" [(ngModel)]="Datos.contrasenia" 
+        required>
+        <mat-error *ngIf="formularioLogin.controls['contrasenia']?.errors?.required">Falta escribir la contrasenia</mat-error>
+    </mat-form-field>
+<span fxFlex="10"></span>
+    <div fxLayout="column" fxFlex fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-raised-button [disabled]="formularioLogin.invalid"
+        (click)="recibir(Datos)"> Iniciar Sesion</button>
+        <button mat-raised-button color="warn" routerLink="/registro" > Registrarse</button>
+    </div>
+
+</form>
+</div>

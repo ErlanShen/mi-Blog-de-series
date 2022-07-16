@@ -1,0 +1,26 @@
+.container {
+  background-color: brown;
+    max-height: 500px;
+    margin: 10px;
+  }
+  img {
+    width: 4rem;
+    margin: 5px;
+    object-fit: contain;
+    object-position: center;
+  }
+  mat-header-cell{
+    font-size: 1rem;
+  }
+  button {
+    margin: 12px;
+  }
+  mat-icon{
+    font-size:  1.5rem;
+  }
+  .circulo{
+    height: 1pc;
+    max-width: 1px;
+    border-radius: 0.6rem;
+    margin-right: 10px;
+}

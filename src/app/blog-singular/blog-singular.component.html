@@ -1,0 +1,50 @@
+<div class="container" fxLayout="column">
+    <div class="division" fxFlex fxLayout="row">
+        <span fxFlex></span>
+        <div class="texto" fxFlex="50" fxLayout="column">
+
+            <div class="titulo">
+                <h1 fxFlex>{{blog.titulo}}</h1>
+            </div>
+            <app-vista-categorias class="categorias" fxFlex fxLayoutAlign="start center" [datos]="blog.categoria"></app-vista-categorias>
+            <div class="intro" fxFlex>
+                <p>{{blog.descripcion}}</p>
+            </div>
+            <div class="subTitulo" fxFlex>
+                <h3>{{blog.subtitulo}}</h3>
+            </div>
+            <div class="cuerpo" fxFlex>
+                <p>
+                    {{blog.descripcion}}
+                </p>
+            </div>
+        </div>
+        <span fxFlex></span>
+    </div>
+    <div class="division" fxFlex=70 fxLayout="row">
+        <span fxFlex></span>
+        <div fxFlex=60 fxLayout="column" fxLayoutAlign="center center">
+            <img fxFlex class="imagenBlog" src="{{blog.foto}}" alt="">
+        </div>
+        <span fxFlex></span>
+    </div>
+    <div class="division" fxFlex fxLayout="row" fxLayoutAlign="center center">
+        <div class="texto" fxFlex="50" fxLayout="column">
+            <div class="subTitulo" fxFlex>
+                <h3>{{blog.subtitulo2}}</h3>
+            </div>
+            <div class="cuerpo" fxFlex>
+                <p>
+                    {{blog.descripcion2}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="division" fxFlex=70 fxLayout="row">
+        <span fxFlex></span>
+        <div fxFlex=60 fxLayout="column" fxLayoutAlign="center center">
+            <img fxFlex class="imagenBlog" src="{{blog.foto2}}" alt="">
+        </div>
+        <span fxFlex></span>
+    </div>
+</div>

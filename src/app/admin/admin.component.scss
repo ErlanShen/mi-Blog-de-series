@@ -1,0 +1,29 @@
+.container {
+  margin: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 2rem;
+}
+table {
+  width: 75%;
+}
+img {
+  width: 4rem;
+  margin: 5px;
+  object-fit: contain;
+  object-position: center;
+}
+.container{
+  padding: 1vh 1vw;
+}
+mat-header-cell{
+  font-size: 1rem;
+}
+button {
+  margin: 12px;
+}
+mat-icon{
+  font-size:  1.5rem;
+}
+mat-cell{
+  text-align: justify;
+}
